@@ -1,12 +1,14 @@
 import { Geist, Geist_Mono, Inter } from "next/font/google"
 
 import "./globals.css"
-import { ThemeProvider } from "@/components/theme-provider"
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils"
+import { Separator } from "@/components/ui/separator"
+import { DesktopNavigation } from "@/components/navigation/desktop-navigation"
+import Header from "@/components/header"
 
-const geistHeading = Geist({subsets:['latin'],variable:'--font-heading'});
+const geistHeading = Geist({ subsets: ["latin"], variable: "--font-heading" })
 
-const inter = Inter({subsets:['latin'],variable:'--font-sans'})
+const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
 
 const fontMono = Geist_Mono({
   subsets: ["latin"],
@@ -22,10 +24,29 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={cn("antialiased", fontMono.variable, "font-sans", inter.variable, geistHeading.variable)}
+      className={cn(
+        "antialiased",
+        fontMono.variable,
+        "font-sans",
+        inter.variable,
+        geistHeading.variable
+      )}
     >
       <body>
-        <ThemeProvider>{children}</ThemeProvider>
+        <div className="grid min-h-screen lg:grid-cols-[440px_1fr]">
+          <DesktopNavigation />
+
+          <main className="min-w-0">
+            {/* <MobileNavigation /> */}
+
+            <div className="flex min-h-screen w-full max-w-5xl flex-col pb-16">
+              <Header />
+              <Separator className="" />
+              {children}
+            </div>
+          </main>
+        </div>
+        <div className="paperOverlay opacity-40"></div>
       </body>
     </html>
   )
