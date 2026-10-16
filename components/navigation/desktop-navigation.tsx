@@ -1,13 +1,10 @@
 "use client"
 
-import { Noto_Sans_JP } from "next/font/google"
-
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import clsx from "clsx"
 import { NAV_ITEMS } from "./navigation-menu"
-
-const noto_sans_jp = Noto_Sans_JP({ subsets: ["latin"] })
+import { ma_shan_zheng } from "@/lib/font"
 
 export function DesktopNavigation() {
   const pathname = usePathname()
@@ -18,12 +15,12 @@ export function DesktopNavigation() {
         <div className="flex items-center gap-1.5">
           <div className="bg-accent px-2 py-1">
             <p
-            className={`${noto_sans_jp.className} text-xl font-bold text-background`}
+              className={`${ma_shan_zheng.className} text-xl font-bold text-background`}
             >
               墨
             </p>
           </div>
-          <p className="font-bold text-xl">
+          <p className="text-xl font-bold">
             sumi<span className="text-accent">.</span>
           </p>
         </div>
@@ -65,7 +62,7 @@ export function DesktopNavigation() {
           <div className="flex-1">
             <div className="h-px w-full bg-accent" />
           </div>
-          <p className={`${noto_sans_jp.className} text-lg font-medium`}>
+          <p className={`${ma_shan_zheng.className} text-xl font-medium`}>
             墨と朱
           </p>
         </div>

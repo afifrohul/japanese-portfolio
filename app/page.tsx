@@ -1,9 +1,7 @@
 "use client"
 
-import { Noto_Sans_JP } from "next/font/google"
+import { noto_sans_jp } from "@/lib/font"
 import { ThinkingOrb } from "thinking-orbs"
-
-const noto_sans_jp = Noto_Sans_JP({ subsets: ["latin"] })
 
 export default function Page() {
   return (
@@ -27,7 +25,7 @@ export default function Page() {
             </div>
           </div>
           <div className="pl-16">
-            <p className="font-medium text-accent tracking-widest">
+            <p className="font-medium tracking-widest text-accent">
               HI, AFIF HERE! WELCOME TO MY PERSONAL SPACE.
             </p>
           </div>
@@ -35,10 +33,10 @@ export default function Page() {
             <p className="text-end font-serif font-semibold text-accent italic">
               [notes]
             </p>
-            <p className="text-end ">
-              Indeed, with difficulty comes easiness. When you have
-              finished (one good action), keep working hard (on another good
-              actions). And place your hope only in your God!
+            <p className="text-end">
+              Indeed, with difficulty comes easiness. When you have finished
+              (one good action), keep working hard (on another good actions).
+              And place your hope only in your God!
             </p>
             <p className="text-end text-sm text-muted-foreground italic">
               Q.S. Al Insyirah (94:6-8)
