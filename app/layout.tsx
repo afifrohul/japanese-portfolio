@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils"
 import { Separator } from "@/components/ui/separator"
 import { DesktopNavigation } from "@/components/navigation/desktop-navigation"
 import Header from "@/components/header"
+import { MobileNavigation } from "@/components/navigation/mobile-navigation"
 
 const geistHeading = Geist({ subsets: ["latin"], variable: "--font-heading" })
 
@@ -37,11 +38,11 @@ export default function RootLayout({
           <DesktopNavigation />
 
           <main className="min-w-0">
-            {/* <MobileNavigation /> */}
+            <MobileNavigation />
 
             <div className="flex min-h-screen w-full max-w-5xl flex-col pb-16">
               <Header />
-              <Separator className="" />
+              <Separator />
               {children}
             </div>
           </main>
