@@ -10,7 +10,7 @@ export default function Header() {
       <div className="flex items-center justify-between px-4 py-3">
         <div className="flex items-center gap-2">
           <ThinkingOrb state="breathing" size={20} color="#b94232" />
-          <p className="hidden text-sm font-semibold tracking-widest md:block">
+          <p className="text-xs font-semibold tracking-widest md:block md:text-sm">
             AFIFROHUL
           </p>
         </div>
@@ -21,7 +21,7 @@ export default function Header() {
             className="flex items-center gap-2 px-2 py-1 text-xs tracking-widest duration-150 hover:bg-accent-foreground hover:text-accent"
           >
             <LuLinkedin />
-            LINKEDIN
+            <p className="hidden md:block">LINKEDIN</p>
           </a>
           <a
             href="https://github.com/afifrohul"
@@ -29,7 +29,7 @@ export default function Header() {
             className="flex items-center gap-2 px-2 py-1 text-xs tracking-widest duration-150 hover:bg-accent-foreground hover:text-accent"
           >
             <LuGithub />
-            GITHUB
+            <p className="hidden md:block">GITHUB</p>
           </a>
         </div>
       </div>

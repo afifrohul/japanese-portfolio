@@ -9,9 +9,9 @@ export default function Page() {
       <div className="p-4 md:px-24">
         <div className="space-y-32">
           <div className="w-fit space-y-2">
-            <div className="w-fit bg-foreground p-6 text-background">
+            <div className="w-fit bg-foreground p-4 md:p-6 text-background">
               <h1
-                className={`${noto_sans_jp.className} text-6xl font-black tracking-tight`}
+                className={`${noto_sans_jp.className} text-2xl md:text-4xl lg:text-6xl font-black tracking-tight`}
               >
                 ポートフォリオ
               </h1>
@@ -24,21 +24,21 @@ export default function Page() {
               </div>
             </div>
           </div>
-          <div className="pl-16">
+          <div className="pl-4 lg:pl-16">
             <p className="font-medium tracking-widest text-accent">
               HI, AFIF HERE! WELCOME TO MY PERSONAL SPACE.
             </p>
           </div>
-          <div className="space-y-2 pl-24">
-            <p className="text-end font-serif font-semibold text-accent italic">
+          <div className="space-y-2 pl-12 lg:pl-24">
+            <p className="text-sm lg:text-base text-end font-serif font-semibold text-accent italic">
               [notes]
             </p>
-            <p className="text-end">
+            <p className="text-end text-xs md:text-base">
               Indeed, with difficulty comes easiness. When you have finished
               (one good action), keep working hard (on another good actions).
               And place your hope only in your God!
             </p>
-            <p className="text-end text-sm text-muted-foreground italic">
+            <p className="text-end text-sm text-xs md:text-sm text-muted-foreground italic">
               Q.S. Al Insyirah (94:6-8)
             </p>
           </div>
