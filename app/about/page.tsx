@@ -6,13 +6,13 @@ import StampBrand from "@/components/brand/stamp"
 export default function Page() {
   return (
     <div className="flex flex-1">
-      <div className="flex flex-1 flex-col gap-8 px-24 pt-16">
+      <div className="flex flex-1 flex-col gap-8 px-8 lg:px-24 pt-16">
         <Image
           src={"/assets/tori-sun.png"}
           alt="tori-sun"
           width={500}
           height={500}
-          className="h-56 w-56"
+          className="h-36 w-36 md:h-56 md:w-56"
         />
         <div className="space-y-2">
           <div className="w-fit bg-foreground px-4 py-3 text-background">
@@ -30,11 +30,11 @@ export default function Page() {
           </div>
         </div>
         <div className="">
-          <p className="pr-16 text-sm tracking-wide">
+          <p className="lg:pr-16 text-sm tracking-wide">
             {about}
           </p>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex flex-wrap items-center gap-2">
           {socials.map(({ label, link, icon: Icon }) => (
             <a
               key={label}
