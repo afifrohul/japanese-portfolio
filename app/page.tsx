@@ -49,7 +49,7 @@ export default function Page() {
             </div>
             <div className="relative hidden md:block">
               <Image
-                src={"/assets/mountain-sun.png"}
+                src={"/assets/mountain-sun-main.png"}
                 alt="image"
                 width={550}
                 height={550}

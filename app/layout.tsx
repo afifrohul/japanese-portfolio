@@ -34,7 +34,7 @@ export default function RootLayout({
       )}
     >
       <body>
-        <div className="grid min-h-screen lg:grid-cols-[300px_1fr]">
+        <div className="grid min-h-screen lg:grid-cols-[340px_1fr]">
           <DesktopNavigation />
 
           <main className="min-w-0">
