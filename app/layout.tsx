@@ -34,13 +34,13 @@ export default function RootLayout({
       )}
     >
       <body>
-        <div className="grid min-h-screen lg:grid-cols-[440px_1fr]">
+        <div className="grid min-h-screen lg:grid-cols-[300px_1fr]">
           <DesktopNavigation />
 
           <main className="min-w-0">
             <MobileNavigation />
 
-            <div className="flex min-h-screen w-full max-w-5xl flex-col pb-16">
+            <div className="flex min-h-screen w-full max-w-6xl flex-col pb-16">
               <Header />
               <Separator />
               {children}

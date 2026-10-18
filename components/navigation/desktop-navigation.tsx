@@ -4,17 +4,17 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import clsx from "clsx"
 import { NAV_ITEMS } from "./navigation-menu"
-import VermilionBrand from "../brand/vermilion"
-import InkBrand from "../brand/ink"
+import StampBrand from "../brand/stamp"
+import BlockBrand from "../brand/block"
 
 export function DesktopNavigation() {
   const pathname = usePathname()
 
   return (
     <aside className="hidden border-r lg:block">
-      <div className="sticky top-0 flex h-screen flex-col justify-between px-16 py-4">
-        <InkBrand />
-        <nav className="flex flex-col gap-6">
+      <div className="sticky top-0 flex h-screen flex-col justify-between px-8 py-4">
+        <BlockBrand content="墨" />
+        <nav className="flex flex-col gap-4">
           {NAV_ITEMS.map((item) => {
             const isActive =
               pathname === item.href ||
@@ -26,9 +26,9 @@ export function DesktopNavigation() {
                   <div
                     className={clsx(
                       "relative flex w-fit items-center gap-4",
-                      "text-5xl font-black tracking-tight",
+                      "text-4xl font-black tracking-tight",
                       "transition-colors duration-300",
-                      "after:absolute after:-bottom-2 after:left-0",
+                      "after:absolute after:-bottom-1 after:left-0",
                       "after:h-0.75 after:w-full",
                       "after:origin-left after:scale-x-0",
                       "after:bg-accent",
@@ -40,7 +40,7 @@ export function DesktopNavigation() {
                     <span>{item.title}</span>
 
                     {isActive && (
-                      <span className="h-3 w-3 animate-spin bg-accent" />
+                      <span className="h-2.5 w-2.5 animate-spin bg-accent" />
                     )}
                   </div>
                 </Link>
@@ -52,7 +52,7 @@ export function DesktopNavigation() {
           <div className="flex-1">
             <div className="h-px w-full bg-foreground" />
           </div>
-          <VermilionBrand />
+          <StampBrand content="朱" />
         </div>
       </div>
     </aside>

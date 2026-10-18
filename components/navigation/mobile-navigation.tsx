@@ -7,8 +7,8 @@ import clsx from "clsx"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { NAV_ITEMS } from "./navigation-menu"
-import InkBrand from "../brand/ink"
-import VermilionBrand from "../brand/vermilion"
+import BlockBrand from "../brand/block"
+import StampBrand from "../brand/stamp"
 
 export function MobileNavigation() {
   const pathname = usePathname()
@@ -31,9 +31,9 @@ export function MobileNavigation() {
 
           <SheetContent side="left" className="bg-background">
             <div className="mx-4 my-12 flex h-full flex-col justify-between md:mx-10">
-              <div className="flex flex-col gap-8">
-                <InkBrand />
-                <nav className="flex flex-col gap-6">
+              <div className="flex flex-col gap-12">
+                <BlockBrand content="墨" />
+                <nav className="flex flex-col gap-4">
                   {NAV_ITEMS.map((item) => {
                     const isActive =
                       pathname === item.href ||
@@ -68,7 +68,7 @@ export function MobileNavigation() {
                 <div className="flex-1">
                   <div className="h-px w-full bg-foreground" />
                 </div>
-                <VermilionBrand />
+                <StampBrand content="朱" />
               </div>
             </div>
           </SheetContent>
