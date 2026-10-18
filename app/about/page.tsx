@@ -1,5 +1,5 @@
 import { noto_sans_jp } from "@/lib/font"
-import { socials } from "./data"
+import { about, socials } from "./data"
 import Image from "next/image"
 import StampBrand from "@/components/brand/stamp"
 
@@ -31,14 +31,7 @@ export default function Page() {
         </div>
         <div className="">
           <p className="pr-16 text-sm tracking-wide">
-            Informatics graduate with a strong passion for Web Development.
-            Skilled in developing robust fullstack systems with the Laravel
-            framework. Over the years, I have consistently built and managed
-            various web-based projects, demonstrating both technical expertise
-            and collaborative teamwork. Currently seeking an opportunity to work
-            in a professional environment to further sharpen my skills,
-            contribute to impactful projects, and gain valuable industry
-            experience.
+            {about}
           </p>
         </div>
         <div className="flex items-center gap-2">
