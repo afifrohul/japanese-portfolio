@@ -1,6 +1,6 @@
 "use client"
 
-import StampBrand from "@/components/brand/stamp"
+import SideDecoration from "@/components/side-decoration"
 import { noto_sans_jp } from "@/lib/font"
 import Image from "next/image"
 import { ThinkingOrb } from "thinking-orbs"
@@ -60,24 +60,7 @@ export default function Page() {
           </div>
         </div>
       </div>
-      <div className="mt-20 mr-4 hidden flex-col justify-between md:flex">
-        <div className="flex flex-col items-center gap-2">
-          <div className="vertical-panel-rl w-fit py-2">
-            <p className={`${noto_sans_jp.className} tracking-widest`}>
-              ウェブサイト開発者
-            </p>
-          </div>
-          <div className="h-10 w-px bg-accent"></div>
-          <StampBrand content="道" />
-        </div>
-        <div className="flex flex-col items-center gap-2">
-          <div className="vertical-panel-rl w-fit py-2">
-            <p className={`${noto_sans_jp.className} tracking-widest`}>方向</p>
-          </div>
-          <div className="h-12 w-px bg-accent"></div>
-          <div className="h-2.5 w-2.5 rounded-full bg-accent"></div>
-        </div>
-      </div>
+      <SideDecoration page="ホーム" content="ウェブサイト開発者" />
     </div>
   )
 }
