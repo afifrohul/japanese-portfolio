@@ -4,7 +4,8 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import clsx from "clsx"
 import { NAV_ITEMS } from "./navigation-menu"
-import { ma_shan_zheng } from "@/lib/font"
+import VermilionBrand from "../brand/vermilion"
+import InkBrand from "../brand/ink"
 
 export function DesktopNavigation() {
   const pathname = usePathname()
@@ -12,18 +13,7 @@ export function DesktopNavigation() {
   return (
     <aside className="hidden border-r lg:block">
       <div className="sticky top-0 flex h-screen flex-col justify-between px-16 py-4">
-        <div className="flex items-center gap-1.5">
-          <div className="bg-accent px-2 py-1">
-            <p
-              className={`${ma_shan_zheng.className} text-xl font-bold text-background`}
-            >
-              墨
-            </p>
-          </div>
-          <p className="text-xl font-bold">
-            sumi<span className="text-accent">.</span>
-          </p>
-        </div>
+        <InkBrand />
         <nav className="flex flex-col gap-6">
           {NAV_ITEMS.map((item) => {
             const isActive =
@@ -60,11 +50,9 @@ export function DesktopNavigation() {
         </nav>
         <div className="flex items-center gap-4">
           <div className="flex-1">
-            <div className="h-px w-full bg-accent" />
+            <div className="h-px w-full bg-foreground" />
           </div>
-          <p className={`${ma_shan_zheng.className} text-xl font-medium`}>
-            墨と朱
-          </p>
+          <VermilionBrand />
         </div>
       </div>
     </aside>

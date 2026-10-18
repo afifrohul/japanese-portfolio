@@ -4,12 +4,11 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Menu } from "lucide-react"
 import clsx from "clsx"
-
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-
 import { NAV_ITEMS } from "./navigation-menu"
-import { ma_shan_zheng } from "@/lib/font"
+import InkBrand from "../brand/ink"
+import VermilionBrand from "../brand/vermilion"
 
 export function MobileNavigation() {
   const pathname = usePathname()
@@ -31,20 +30,9 @@ export function MobileNavigation() {
           </SheetTrigger>
 
           <SheetContent side="left" className="bg-background">
-            <div className="mx-4 md:mx-10 my-12 flex h-full flex-col justify-between">
+            <div className="mx-4 my-12 flex h-full flex-col justify-between md:mx-10">
               <div className="flex flex-col gap-8">
-                <div className="flex items-center gap-1.5">
-                  <div className="bg-accent px-1 py-0.5">
-                    <p
-                      className={`${ma_shan_zheng.className} text-lg md:text-xl font-bold text-background`}
-                    >
-                      墨
-                    </p>
-                  </div>
-                  <p className="text-lg md:text-xl font-bold">
-                    sumi<span className="text-accent">.</span>
-                  </p>
-                </div>
+                <InkBrand />
                 <nav className="flex flex-col gap-6">
                   {NAV_ITEMS.map((item) => {
                     const isActive =
@@ -78,11 +66,9 @@ export function MobileNavigation() {
               </div>
               <div className="flex items-center gap-4">
                 <div className="flex-1">
-                  <div className="h-px w-full bg-accent" />
+                  <div className="h-px w-full bg-foreground" />
                 </div>
-                <p className={`${ma_shan_zheng.className}  text-lg md:text-xl font-medium`}>
-                  墨と朱
-                </p>
+                <VermilionBrand />
               </div>
             </div>
           </SheetContent>
