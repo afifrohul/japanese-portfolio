@@ -52,7 +52,7 @@ export default function RootLayout({
             </div>
           </main>
         </div>
-        <div className="paperOverlay opacity-30"/>
+        <div className="paperOverlay opacity-30" />
       </body>
     </html>
   )

@@ -25,7 +25,7 @@ export default function Page() {
             <h1
               className={`${noto_sans_jp.className} text-4xl font-black tracking-tight`}
             >
-              経験
+              事業
             </h1>
           </div>
           <div className="flex w-full items-center gap-3">
