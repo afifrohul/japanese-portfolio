@@ -34,6 +34,9 @@ export default function Page() {
             </div>
           </div>
         </div>
+        <p className="font-semibold tracking-widest text-accent font-mono">
+          {`Hi, I'm Afif Rohul Abrori.`}
+        </p>
         <div className="">
           <p className="text-sm tracking-wide lg:pr-16">{about}</p>
         </div>
