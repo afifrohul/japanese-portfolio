@@ -47,7 +47,7 @@ export default function Page() {
                     {item.end_year}
                   </p>
                 </div>
-                <p className="text-xs text-muted-foreground uppercase">
+                <p className="text-xs text-muted-foreground uppercase font-mono">
                   {item.role} ・ {item.location}
                 </p>
               </div>
