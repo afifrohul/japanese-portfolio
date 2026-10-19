@@ -1,11 +1,17 @@
 "use client"
 
-import { motion, useMotionValue, useSpring } from "framer-motion"
-import { useEffect } from "react"
+import {
+  motion,
+  useMotionValue,
+  useSpring,
+} from "framer-motion"
+import { useEffect, useState } from "react"
 
 export default function SmoothCursor() {
-  const cursorX = useMotionValue(-100)
-  const cursorY = useMotionValue(-100)
+  const [isPositioned, setIsPositioned] = useState(false)
+
+  const cursorX = useMotionValue(0)
+  const cursorY = useMotionValue(0)
 
   const springX = useSpring(cursorX, {
     stiffness: 150,
@@ -18,9 +24,24 @@ export default function SmoothCursor() {
   })
 
   useEffect(() => {
-    const moveCursor = (e: MouseEvent) => {
-      cursorX.set(e.clientX + 15)
-      cursorY.set(e.clientY + 15)
+    const moveCursor = (event: MouseEvent) => {
+      const x = event.clientX + 15
+      const y = event.clientY + 15
+
+      // Posisi pertama langsung ditetapkan tanpa animasi spring.
+      if (!isPositioned) {
+        cursorX.jump(x)
+        cursorY.jump(y)
+        springX.jump(x)
+        springY.jump(y)
+
+        setIsPositioned(true)
+        return
+      }
+
+      // Gerakan berikutnya menggunakan spring animation.
+      cursorX.set(x)
+      cursorY.set(y)
     }
 
     window.addEventListener("mousemove", moveCursor)
@@ -28,15 +49,16 @@ export default function SmoothCursor() {
     return () => {
       window.removeEventListener("mousemove", moveCursor)
     }
-  }, [cursorX, cursorY])
+  }, [cursorX, cursorY, springX, springY, isPositioned])
 
   return (
     <motion.div
       aria-hidden="true"
       className="pointer-events-none fixed left-0 top-0 z-9999 hidden w-fit rounded-full rounded-tl-md bg-accent px-3 py-1.5 lg:block"
       style={{
-        translateX: springX,
-        translateY: springY,
+        x: springX,
+        y: springY,
+        visibility: isPositioned ? "visible" : "hidden",
       }}
     >
       <p className="font-mono text-xs font-semibold text-background">
