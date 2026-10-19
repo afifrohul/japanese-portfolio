@@ -51,7 +51,7 @@ export default function Page() {
           ))}
         </div>
       </div>
-      <SideDecoration page="概要" content="デザイン・開発" />
+      <SideDecoration page="概要" content="静かな存在感" />
     </div>
   )
 }
