@@ -15,7 +15,7 @@ export default function Page() {
       <div className="flex flex-1 flex-col gap-8 px-6 pt-16 lg:px-24">
         <Image
           src={"/assets/book-sun.png"}
-          alt="tori-sun"
+          alt="book-sun"
           width={500}
           height={500}
           className="h-36 w-36 md:h-56 md:w-56"
@@ -31,7 +31,9 @@ export default function Page() {
           <div className="flex w-full items-center gap-3">
             <p className="tracking-widest text-accent">EDUCATION</p>
             <div className="h-px w-6 bg-foreground" />
-            <p className="tracking-widest text-accent">2 JOURNEY</p>
+            <p className="tracking-widest text-accent">
+              {educations.length} JOURNEYS
+            </p>
           </div>
         </div>
         <div className="flex flex-col gap-8">
