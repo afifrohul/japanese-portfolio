@@ -41,7 +41,7 @@ export default function Header() {
                   ? "Disable custom cursor"
                   : "Enable custom cursor"
               }
-              className={`flex items-center gap-2 p-2 text-xs tracking-widest transition-colors duration-150 hover:bg-accent-foreground hover:text-accent ${
+              className={`flex items-center gap-2 p-2 text-xs tracking-widest transition-colors duration-150 hover:bg-accent-foreground hover:text-accent hidden lg:block ${
                 isCursorEnabled
                   ? "bg-accent-foreground text-accent"
                   : ""
