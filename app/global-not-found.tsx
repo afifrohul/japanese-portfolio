@@ -29,7 +29,7 @@ export default function GlobalNotFound() {
                   404
                 </h1>
               </div>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 text-xs md:text-base">
                 <p className={`${noto_sans_jp.className}`}>
                   ページが見つかりません
                 </p>
