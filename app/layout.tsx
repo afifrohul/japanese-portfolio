@@ -33,6 +33,11 @@ export default function RootLayout({
         geistHeading.variable
       )}
     >
+      <head>
+        <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title> 墨朱 | Afif Rohul</title>
+      </head>
       <body>
         <div className="grid min-h-screen lg:grid-cols-[340px_1fr]">
           <DesktopNavigation />

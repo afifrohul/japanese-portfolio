@@ -2,6 +2,11 @@ import { noto_sans_jp } from "@/lib/font"
 import { about, socials } from "./data"
 import Image from "next/image"
 import SideDecoration from "@/components/side-decoration"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "概要 - About | Afif Rohul",
+}
 
 export default function Page() {
   return (

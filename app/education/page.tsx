@@ -3,6 +3,11 @@ import Image from "next/image"
 import { educations } from "./data"
 import { Separator } from "@/components/ui/separator"
 import SideDecoration from "@/components/side-decoration"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "教育 - Education | Afif Rohul",
+}
 
 export default function Page() {
   return (
