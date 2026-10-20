@@ -5,27 +5,24 @@ import { Separator } from "./ui/separator"
 import { ThinkingOrb } from "thinking-orbs"
 import { LuGithub, LuLinkedin, LuMousePointer2 } from "react-icons/lu"
 import SmoothCursor from "./smooth-cursor"
+import { AudioPlayer } from "./audio-player"
 
 export default function Header() {
-  const [isCursorEnabled, setIsCursorEnabled] = useState(false)
+  const [isCursorEnabled, setIsCursorEnabled] = useState(true)
 
   return (
     <>
       {isCursorEnabled && <SmoothCursor />}
 
-      <div>
+      <div className="">
         <div className="flex items-center justify-between px-4 py-3">
           <div className="flex items-center gap-2">
-            <ThinkingOrb
-              state="breathing"
-              size={20}
-              color="#b94232"
-            />
+            <ThinkingOrb state="breathing" size={20} color="#b94232" />
             <p className="font-mono text-xs font-semibold tracking-widest md:text-sm">
               AFIF
             </p>
           </div>
-
+          <AudioPlayer />
           <div className="flex items-center gap-2">
             <button
               type="button"
@@ -41,10 +38,8 @@ export default function Header() {
                   ? "Disable custom cursor"
                   : "Enable custom cursor"
               }
-              className={`flex items-center gap-2 p-2 text-xs tracking-widest transition-colors duration-150 hover:bg-accent-foreground hover:text-accent hidden lg:block ${
-                isCursorEnabled
-                  ? "bg-accent-foreground text-accent"
-                  : ""
+              className={`flex hidden items-center gap-2 p-2 text-xs tracking-widest transition-colors duration-150 hover:bg-accent-foreground hover:text-accent lg:block ${
+                isCursorEnabled ? "bg-accent-foreground text-accent" : ""
               }`}
             >
               <LuMousePointer2 />
