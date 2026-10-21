@@ -7,7 +7,7 @@ import {
 } from "framer-motion"
 import { useEffect, useState } from "react"
 
-export default function SmoothCursor() {
+export default function SmoothCursorDecoration() {
   const [isPositioned, setIsPositioned] = useState(false)
 
   const cursorX = useMotionValue(0)
@@ -25,8 +25,8 @@ export default function SmoothCursor() {
 
   useEffect(() => {
     const moveCursor = (event: MouseEvent) => {
-      const x = event.clientX + 15
-      const y = event.clientY + 15
+      const x = event.clientX + 14
+      const y = event.clientY + 19
 
       // Posisi pertama langsung ditetapkan tanpa animasi spring.
       if (!isPositioned) {

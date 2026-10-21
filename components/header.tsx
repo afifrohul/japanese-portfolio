@@ -4,7 +4,7 @@ import { useState } from "react"
 import { Separator } from "./ui/separator"
 import { ThinkingOrb } from "thinking-orbs"
 import { LuGithub, LuLinkedin, LuMousePointer2 } from "react-icons/lu"
-import SmoothCursor from "./smooth-cursor"
+import SmoothCursor from "./smooth-cursor-decoration"
 import { AudioPlayer } from "./audio/audio-player"
 
 export default function Header() {
