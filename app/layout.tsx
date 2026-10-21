@@ -45,7 +45,7 @@ export default function RootLayout({
           <main className="lg:flex lg:justify-center">
             <MobileNavigation />
 
-            <div className="flex min-h-screen w-full max-w-6xl flex-col pb-16">
+            <div className="flex min-h-screen w-full max-w-6xl flex-col pb-4">
               <Header />
               <Separator />
               {children}
