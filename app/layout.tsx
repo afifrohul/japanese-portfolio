@@ -42,7 +42,7 @@ export default function RootLayout({
         <div className="grid min-h-screen lg:grid-cols-[340px_1fr]">
           <DesktopNavigation />
 
-          <main className="min-w-0">
+          <main className="lg:flex lg:justify-center">
             <MobileNavigation />
 
             <div className="flex min-h-screen w-full max-w-6xl flex-col pb-16">
