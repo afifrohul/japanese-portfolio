@@ -1,9 +1,10 @@
 "use client"
 
+import StampBrand from "@/components/brand/stamp"
 import SideDecoration from "@/components/side-decoration"
 import { noto_sans_jp } from "@/lib/font"
 import Image from "next/image"
-import { ThinkingOrb } from "thinking-orbs"
+// import { ThinkingOrb } from "thinking-orbs"
 
 export default function Page() {
   return (
@@ -20,7 +21,8 @@ export default function Page() {
                 </h1>
               </div>
               <div className="flex w-full items-center gap-3">
-                <ThinkingOrb state="solving" size={20} color="#b94232" />
+                {/* <ThinkingOrb state="solving" size={20} color="#b94232" /> */}
+                <StampBrand content="印" classname="text-base"/>
                 <p className="tracking-widest text-accent">PORTFOLIO</p>
                 <div className="flex-1">
                   <div className="h-px w-2/3 bg-foreground" />
