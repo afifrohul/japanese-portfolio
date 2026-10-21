@@ -1,7 +1,7 @@
 import { getFrequencyBands } from "@/lib/audio"
 import { useEffect, useRef } from "react"
 
-const BAR_COUNT = 5
+const BAR_COUNT = 4
 
 export default function Equaliser({ playing }: { playing: boolean }) {
   const ref = useRef<HTMLSpanElement>(null)
