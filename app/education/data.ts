@@ -12,7 +12,7 @@ export const educations = [
   },
   {
     company: "Bangkit Academy 2023 Batch 2",
-    location: "Remote",
+    location: "Remote Location",
     department: "Cloud Computing Learning Path",
     focus: "CLOUD COMPUTING ・ GOOGLE CLOUD PLATFORM ・ CAPSTONE PROJECT",
     start_month: "Aug",

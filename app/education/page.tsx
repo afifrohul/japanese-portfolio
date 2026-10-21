@@ -50,7 +50,7 @@ export default function Page() {
                   </p>
                 </div>
                 <p className="text-xs text-muted-foreground uppercase font-mono">
-                  {item.department}
+                  {item.location} | {item.department}
                 </p>
               </div>
               <p className="text-sm">{item.desc}</p>
