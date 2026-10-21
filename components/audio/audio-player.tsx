@@ -14,18 +14,7 @@ import {
 import { audioState } from "@/lib/audio"
 import Equaliser from "./equaliser"
 import { formatTime } from "./format-time"
-
-type Track = {
-  src: string
-  title: string
-  label?: string
-}
-
-const TRACKS: Track[] = [
-  { src: "/audio/kanawanai.mp3", title: "Kanawanai", label: "Centimillimental" },
-  // Tambahkan track lain jika ingin mengaktifkan next/previous:
-  // { src: "/audio/another-song.mp3", title: "Another Song", label: "Ambient" },
-]
+import { TRACKS } from "./tracks"
 
 const CARD_HEIGHT = 160
 const CARD_MAX_WIDTH = 340
@@ -37,7 +26,6 @@ const sliderClass =
 
 const iconButton =
   "flex items-center justify-center transition-[color,transform,background-color] duration-150 ease-out hover:text-accent active:scale-[0.92] disabled:cursor-not-allowed disabled:opacity-25 disabled:hover:text-current"
-
 
 export function AudioPlayer() {
   const [playing, setPlaying] = useState(false)
@@ -55,6 +43,7 @@ export function AudioPlayer() {
   const contextRef = useRef<AudioContext | null>(null)
   const hoverTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
   const lastVolumeRef = useRef(0.5)
+  const shouldPlayRef = useRef(false)
 
   const track = TRACKS[index]
   const single = TRACKS.length <= 1
@@ -110,8 +99,10 @@ export function AudioPlayer() {
     const onTimeUpdate = () => setTime(audio.currentTime)
     const onMetadata = () =>
       setDuration(Number.isFinite(audio.duration) ? audio.duration : 0)
+
     const onEnded = () => {
       if (TRACKS.length > 1) {
+        shouldPlayRef.current = true // Tandai agar lagu berikutnya otomatis diputar
         setIndex((current) => (current + 1) % TRACKS.length)
       } else {
         setPlaying(false)
@@ -143,6 +134,7 @@ export function AudioPlayer() {
     audio.addEventListener("error", onError)
 
     return () => {
+      // ... (cleanup listeners tetap sama)
       audio.removeEventListener("timeupdate", onTimeUpdate)
       audio.removeEventListener("loadedmetadata", onMetadata)
       audio.removeEventListener("durationchange", onMetadata)
@@ -171,14 +163,17 @@ export function AudioPlayer() {
     const audio = audioRef.current
     if (!audio || !track) return
 
-    const wasPlaying = !audio.paused
+    // Cek apakah sedang dimainkan ATAU ada flag shouldPlay dari onEnded/tombol Next
+    const shouldPlay = !audio.paused || shouldPlayRef.current
+    shouldPlayRef.current = false // Reset kembali flag setelah dibaca
+
     audio.src = track.src
     audio.load()
     setTime(0)
     setDuration(0)
     setError(null)
 
-    if (wasPlaying) {
+    if (shouldPlay) {
       void audio.play().catch(() => {
         setPlaying(false)
         audioState.isPlaying = false
@@ -211,6 +206,7 @@ export function AudioPlayer() {
 
   const next = useCallback(() => {
     if (single) return
+    shouldPlayRef.current = true // Pastikan tombol Next juga memaksa lagu baru terplay
     setIndex((current) => (current + 1) % TRACKS.length)
   }, [single])
 
@@ -341,7 +337,7 @@ export function AudioPlayer() {
             </span>
           </span>
 
-          <span className="truncate">{track.title}</span>
+          <span className="truncate">{track.note}</span>
 
           {/* Time: selalu dirender, tetapi lebarnya berubah */}
           <span

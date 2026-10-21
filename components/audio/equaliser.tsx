@@ -1,32 +1,53 @@
 import { getFrequencyBands } from "@/lib/audio"
 import { useEffect, useRef } from "react"
 
+const BAR_COUNT = 5
+
 export default function Equaliser({ playing }: { playing: boolean }) {
   const ref = useRef<HTMLSpanElement>(null)
 
   useEffect(() => {
-    const bars = ref.current
-      ? (Array.from(ref.current.children) as HTMLElement[])
-      : []
+    const container = ref.current
+    if (!container) return
 
-    const setBars = (values: number[]) => {
-      bars.forEach((bar, i) => {
-        bar.style.transform = `scaleY(${values[i] ?? 0.22})`
-      })
-    }
+    const bars = Array.from(container.children) as HTMLElement[]
 
     let raf = 0
+
     const tick = () => {
       const { bass, mid, treble } = getFrequencyBands()
-      setBars(
-        [bass, mid, treble].map((value) =>
-          Math.max(0.18, Math.min(1, value * 2.2))
-        )
-      )
-      raf = requestAnimationFrame(tick)
+
+      // Setiap bar mengambil respons frekuensi berbeda.
+      const values = Array.from({ length: BAR_COUNT }, (_, i) => {
+        const position = i / (BAR_COUNT - 1)
+
+        // Interpolasi sederhana dari bass ke mid lalu treble.
+        if (position < 0.5) {
+          const t = position * 2
+          return bass * (1 - t) + mid * t
+        }
+
+        const t = (position - 0.5) * 2
+        return mid * (1 - t) + treble * t
+      })
+
+      bars.forEach((bar, i) => {
+        // Skala minimum menjaga bar tetap terlihat
+        // meskipun audio sedang diam atau dijeda.
+        const scale = playing
+          ? Math.max(0.25, Math.min(1, values[i] * 2.5))
+          : 0.25
+
+        bar.style.transform = `scaleY(${scale})`
+      })
+
+      if (playing) {
+        raf = requestAnimationFrame(tick)
+      }
     }
 
-    raf = requestAnimationFrame(tick)
+    tick()
+
     return () => cancelAnimationFrame(raf)
   }, [playing])
 
@@ -34,13 +55,15 @@ export default function Equaliser({ playing }: { playing: boolean }) {
     <span
       ref={ref}
       aria-hidden="true"
-      className="flex h-2 shrink-0 items-end gap-0.75"
+      className="flex h-3 items-center gap-0.5"
     >
-      {[0, 1, 2].map((bar) => (
+      {Array.from({ length: BAR_COUNT }, (_, i) => (
         <span
-          key={bar}
-          className="h-full w-px origin-bottom bg-accent transition-transform duration-75 ease-out"
-          style={{ transform: "scaleY(0.22)" }}
+          key={i}
+          className="h-full w-px origin-center rounded-full bg-accent transition-transform duration-75 ease-out"
+          style={{
+            transform: "scaleY(0.25)",
+          }}
         />
       ))}
     </span>
