@@ -32,7 +32,12 @@ export function MobileNavigation() {
           <SheetContent side="left" className="bg-background">
             <div className="mx-4 my-12 flex h-full flex-col justify-between md:mx-10">
               <div className="flex flex-col gap-12">
-                <BlockBrand content="墨" />
+                <div className="flex items-center gap-2">
+                  <BlockBrand content="墨" />
+                  <p className="text-xl font-bold">
+                    sumi<span className="text-accent">.</span>
+                  </p>
+                </div>
                 <nav className="flex flex-col gap-4">
                   {NAV_ITEMS.map((item) => {
                     const isActive =

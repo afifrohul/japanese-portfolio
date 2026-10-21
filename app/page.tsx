@@ -1,6 +1,6 @@
 "use client"
 
-import StampBrand from "@/components/brand/stamp"
+import BlockBrand from "@/components/brand/block"
 import SideDecoration from "@/components/side-decoration"
 import { noto_sans_jp } from "@/lib/font"
 import Image from "next/image"
@@ -22,7 +22,7 @@ export default function Page() {
               </div>
               <div className="flex w-full items-center gap-3">
                 {/* <ThinkingOrb state="solving" size={20} color="#b94232" /> */}
-                <StampBrand content="印" classname="text-base"/>
+                <BlockBrand content="印" classname="text-lg" />
                 <p className="tracking-widest text-accent">PORTFOLIO</p>
                 <div className="flex-1">
                   <div className="h-px w-2/3 bg-foreground" />
@@ -30,7 +30,7 @@ export default function Page() {
               </div>
             </div>
             <div className="pl-4 lg:pl-16">
-              <p className="font-medium tracking-widest text-accent font-mono">
+              <p className="font-mono font-medium tracking-widest text-accent">
                 HI, AFIF HERE! WELCOME TO MY PERSONAL SPACE.
               </p>
             </div>

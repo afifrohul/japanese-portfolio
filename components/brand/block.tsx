@@ -1,22 +1,21 @@
 import { ma_shan_zheng } from "@/lib/font"
+import { cn } from "cn"
 
 interface BlockBrandProps {
   content: string
+  classname?: string
 }
 
-export default function BlockBrand({ content }: BlockBrandProps) {
+export default function BlockBrand({ content, classname }: BlockBrandProps) {
   return (
     <div className="flex items-center gap-1.5">
       <div className="bg-accent px-2 py-1">
         <p
-          className={`${ma_shan_zheng.className} text-xl font-bold text-background`}
+          className={cn(`${ma_shan_zheng.className} text-xl font-bold text-background`, classname)}
         >
           {content}
         </p>
       </div>
-      <p className="text-xl font-bold">
-        sumi<span className="text-accent">.</span>
-      </p>
     </div>
   )
 }

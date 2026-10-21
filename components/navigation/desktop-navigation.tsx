@@ -13,7 +13,12 @@ export function DesktopNavigation() {
   return (
     <aside className="hidden border-r lg:block">
       <div className="sticky top-0 flex h-screen flex-col justify-between px-8 py-4">
-        <BlockBrand content="墨" />
+        <div className="flex items-center gap-2">
+          <BlockBrand content="墨" />
+          <p className="text-xl font-bold">
+            sumi<span className="text-accent">.</span>
+          </p>
+        </div>
         <nav className="flex flex-col gap-4">
           {NAV_ITEMS.map((item) => {
             const isActive =
