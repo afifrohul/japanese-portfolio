@@ -28,14 +28,14 @@ export default function Page() {
         <div className="flex w-full justify-end">
           <div className="space-y-2 px-2 md:w-1/2 md:p-0">
             <p className={`text-xs text-accent ${noto_sans_jp.className}`}>
-              注 / notes
+              注 / note
             </p>
             <p className="text-xs">
               Indeed, with difficulty comes easiness. When you have finished
               (one good action), keep working hard (on another good actions).
               And place your hope only in your God!
             </p>
-            <p className="text-xs text-muted-foreground italic">
+            <p className="text-xs text-muted-foreground font-mono">
               Q.S. Al Insyirah (94:6-8)
             </p>
           </div>

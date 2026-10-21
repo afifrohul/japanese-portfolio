@@ -2,7 +2,6 @@
 
 import { useState } from "react"
 import { Separator } from "./ui/separator"
-// import { ThinkingOrb } from "thinking-orbs"
 import { LuGithub, LuLinkedin, LuMousePointer2 } from "react-icons/lu"
 import SmoothCursor from "./smooth-cursor-decoration"
 import { AudioPlayer } from "./audio/audio-player"
@@ -18,7 +17,6 @@ export default function Header() {
       <div className="">
         <div className="flex items-center justify-between px-4 py-3">
           <div className="flex items-center gap-2">
-            {/* <ThinkingOrb state="breathing" size={20} color="#b94232" /> */}
             <StampBrand content="静" classname="text-base"/>
             <p className="font-mono text-xs font-semibold tracking-widest md:text-sm">
               AFIF
