@@ -11,7 +11,9 @@ import {
   Music2,
   X,
 } from "lucide-react"
-import { audioState, getFrequencyBands } from "@/lib/audio"
+import { audioState } from "@/lib/audio"
+import Equaliser from "./equaliser"
+import { formatTime } from "./format-time"
 
 type Track = {
   src: string
@@ -36,57 +38,6 @@ const sliderClass =
 const iconButton =
   "flex items-center justify-center transition-[color,transform,background-color] duration-150 ease-out hover:text-accent active:scale-[0.92] disabled:cursor-not-allowed disabled:opacity-25 disabled:hover:text-current"
 
-function formatTime(seconds: number): string {
-  if (!Number.isFinite(seconds) || seconds < 0) return "0:00"
-  const whole = Math.floor(seconds)
-  return `${Math.floor(whole / 60)}:${String(whole % 60).padStart(2, "0")}`
-}
-
-function Equaliser({ playing }: { playing: boolean }) {
-  const ref = useRef<HTMLSpanElement>(null)
-
-  useEffect(() => {
-    const bars = ref.current
-      ? (Array.from(ref.current.children) as HTMLElement[])
-      : []
-
-    const setBars = (values: number[]) => {
-      bars.forEach((bar, i) => {
-        bar.style.transform = `scaleY(${values[i] ?? 0.22})`
-      })
-    }
-
-    let raf = 0
-    const tick = () => {
-      const { bass, mid, treble } = getFrequencyBands()
-      setBars(
-        [bass, mid, treble].map((value) =>
-          Math.max(0.18, Math.min(1, value * 2.2))
-        )
-      )
-      raf = requestAnimationFrame(tick)
-    }
-
-    raf = requestAnimationFrame(tick)
-    return () => cancelAnimationFrame(raf)
-  }, [playing])
-
-  return (
-    <span
-      ref={ref}
-      aria-hidden="true"
-      className="flex h-2 shrink-0 items-end gap-0.75"
-    >
-      {[0, 1, 2].map((bar) => (
-        <span
-          key={bar}
-          className="h-full w-px origin-bottom bg-accent transition-transform duration-75 ease-out"
-          style={{ transform: "scaleY(0.22)" }}
-        />
-      ))}
-    </span>
-  )
-}
 
 export function AudioPlayer() {
   const [playing, setPlaying] = useState(false)

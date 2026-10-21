@@ -28,7 +28,7 @@ export default function Page() {
               </div>
             </div>
             <div className="pl-4 lg:pl-16">
-              <p className="font-medium tracking-widest text-accent">
+              <p className="font-medium tracking-widest text-accent font-mono">
                 HI, AFIF HERE! WELCOME TO MY PERSONAL SPACE.
               </p>
             </div>
