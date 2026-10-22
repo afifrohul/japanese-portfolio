@@ -16,8 +16,6 @@ export default function ImageWithBlurPlaceholder({
     <Image
       src={src}
       alt="image"
-      width={500}
-      height={500}
       placeholder="blur"
       onLoad={() => setLoaded(true)}
       className={`h-36 w-36 object-contain transition-all duration-100 ease-out md:h-56 md:w-56 ${
