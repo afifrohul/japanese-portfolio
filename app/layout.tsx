@@ -6,6 +6,8 @@ import { Separator } from "@/components/ui/separator"
 import { DesktopNavigation } from "@/components/navigation/desktop-navigation"
 import Header from "@/components/header"
 import { MobileNavigation } from "@/components/navigation/mobile-navigation"
+import { Analytics } from "@vercel/analytics/next"
+import PaperOverlay from "@/components/paper-overlay"
 
 const geistHeading = Geist({ subsets: ["latin"], variable: "--font-heading" })
 
@@ -35,10 +37,12 @@ export default function RootLayout({
     >
       <head>
         <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+        <link rel="preload" as="image" href="/textures/washi.jpg" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title> 墨朱 | Afif Rohul</title>
       </head>
       <body>
+        <Analytics/>
         <div className="grid min-h-screen lg:grid-cols-[340px_1fr]">
           <DesktopNavigation />
 
@@ -52,7 +56,7 @@ export default function RootLayout({
             </div>
           </main>
         </div>
-        <div className="paperOverlay opacity-30" />
+        <PaperOverlay />
       </body>
     </html>
   )

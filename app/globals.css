@@ -101,16 +101,14 @@ body {
 }
 
 .paperOverlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-repeat: repeat;
+  background-color: transparent;
   background-image: url("/textures/washi.jpg");
+  background-repeat: repeat;
+  background-position: top left;
+  background-size: auto;
   mix-blend-mode: multiply;
-  pointer-events: none;
 }
+
 
 ::selection {
   background: #ded8cd; /* Warna latar belakang saat teks diblok */
