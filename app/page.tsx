@@ -26,7 +26,7 @@ export default function Page() {
           </div>
         </div>
         <div className="flex w-full justify-end">
-          <div className="space-y-2 px-2 md:w-1/2 md:p-0">
+          <div className="space-y-2 px-4 md:w-1/2 md:p-0">
             <p className={`text-xs text-accent ${noto_sans_jp.className}`}>
               注 / note
             </p>

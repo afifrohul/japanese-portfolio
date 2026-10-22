@@ -8,6 +8,7 @@ import Header from "@/components/header"
 import { MobileNavigation } from "@/components/navigation/mobile-navigation"
 import { Analytics } from "@vercel/analytics/next"
 import PaperOverlay from "@/components/paper-overlay"
+import SmoothScroll from "@/components/smooth-scroll"
 
 const geistHeading = Geist({ subsets: ["latin"], variable: "--font-heading" })
 
@@ -42,20 +43,22 @@ export default function RootLayout({
         <title> 墨朱 | Afif Rohul</title>
       </head>
       <body>
-        <Analytics/>
-        <div className="grid min-h-screen lg:grid-cols-[340px_1fr]">
-          <DesktopNavigation />
+        <Analytics />
+        <SmoothScroll>
+          <div className="grid min-h-screen lg:grid-cols-[340px_1fr]">
+            <DesktopNavigation />
 
-          <main className="lg:flex lg:justify-center">
-            <MobileNavigation />
+            <main className="lg:flex lg:justify-center">
+              <MobileNavigation />
 
-            <div className="flex min-h-screen w-full max-w-6xl flex-col pb-4">
-              <Header />
-              <Separator />
-              {children}
-            </div>
-          </main>
-        </div>
+              <div className="flex min-h-screen w-full max-w-6xl flex-col pb-4">
+                <Header />
+                <Separator />
+                {children}
+              </div>
+            </main>
+          </div>
+        </SmoothScroll>
         <PaperOverlay />
       </body>
     </html>
