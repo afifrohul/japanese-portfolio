@@ -9,6 +9,7 @@ import { MobileNavigation } from "@/components/navigation/mobile-navigation"
 import { Analytics } from "@vercel/analytics/next"
 import PaperOverlay from "@/components/paper-overlay"
 import SmoothScroll from "@/components/smooth-scroll"
+import IntroLoader from "@/components/intro-loader"
 
 const geistHeading = Geist({ subsets: ["latin"], variable: "--font-heading" })
 
@@ -44,6 +45,7 @@ export default function RootLayout({
       </head>
       <body>
         <Analytics />
+        <IntroLoader/>
         <SmoothScroll>
           <div className="grid min-h-screen lg:grid-cols-[340px_1fr]">
             <DesktopNavigation />
