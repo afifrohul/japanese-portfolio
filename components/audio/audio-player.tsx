@@ -9,7 +9,6 @@ import {
   Volume2,
   VolumeX,
   Music2,
-  X,
 } from "lucide-react"
 import { audioState } from "@/lib/audio"
 import Equaliser from "./equaliser"
@@ -386,18 +385,19 @@ export function AudioPlayer() {
 
               <p className="mt-1 truncate font-mono text-[9px] tracking-[0.18em] text-foreground/50 uppercase">
                 {track.label ?? "Now playing"}
-                {!single && ` · ${index + 1}/${TRACKS.length}`}
               </p>
             </div>
 
-            <button
-              type="button"
-              onClick={() => setOpen(false)}
-              aria-label="Close audio controls"
-              className={`${iconButton} size-6 shrink-0 text-foreground/60`}
-            >
-              <X size={13} />
-            </button>
+            {!single && (
+              <div className="flex flex-col items-center">
+                <p className="mt-1 truncate font-mono text-[9px] tracking-[0.18em] text-accent uppercase">
+                  TRACKS
+                </p>
+                <p className="mt-1 truncate font-mono text-[9px] tracking-[0.18em] text-foreground/50 uppercase">
+                  {`${index + 1}/${TRACKS.length}`}
+                </p>
+              </div>
+            )}
           </div>
 
           {/* Timeline */}
