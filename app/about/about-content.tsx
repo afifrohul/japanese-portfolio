@@ -8,7 +8,7 @@ export default function AboutContent() {
   return (
     <div className="flex flex-1">
       <div className="flex flex-1 flex-col gap-8 px-8 pt-16 lg:px-24">
-        <ImageWithBlurPlaceholder src={tori} />
+        <ImageWithBlurPlaceholder src={tori} classname="h-36 w-36 md:h-56 md:w-56"/>
         <div className="space-y-2">
           <div className="w-fit bg-foreground px-4 py-3 text-background">
             <h1

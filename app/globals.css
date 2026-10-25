@@ -109,7 +109,6 @@ body {
   mix-blend-mode: multiply;
 }
 
-
 ::selection {
   background: #ded8cd; /* Warna latar belakang saat teks diblok */
 }

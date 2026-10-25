@@ -1,14 +1,17 @@
 "use client"
 
+import { cn } from "cn"
 import Image, { type StaticImageData } from "next/image"
 import { useState } from "react"
 
 interface ImageWithBlurPlaceholderProps {
   src: StaticImageData
+  classname?: string
 }
 
 export default function ImageWithBlurPlaceholder({
   src,
+  classname,
 }: ImageWithBlurPlaceholderProps) {
   const [loaded, setLoaded] = useState(false)
 
@@ -18,9 +21,12 @@ export default function ImageWithBlurPlaceholder({
       alt="image"
       placeholder="blur"
       onLoad={() => setLoaded(true)}
-      className={`h-36 w-36 object-contain transition-all duration-100 ease-out md:h-56 md:w-56 ${
-        loaded ? "blur-0 opacity-100" : "opacity-10 blur-xl"
-      } `}
+      className={cn(
+        `object-cover transition-all duration-100 ease-out ${
+          loaded ? "blur-0 opacity-100" : "opacity-10 blur-xl"
+        } `,
+        classname
+      )}
     />
   )
 }

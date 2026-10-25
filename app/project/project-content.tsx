@@ -9,7 +9,7 @@ export default function ProjectContent() {
   return (
     <div className="flex flex-1">
       <div className="flex flex-1 flex-col gap-8 px-6 pt-16 lg:px-24">
-        <ImageWithBlurPlaceholder src={ship} />
+        <ImageWithBlurPlaceholder src={ship} classname="h-36 w-36 md:h-56 md:w-56"/>
         <div className="space-y-2">
           <div className="w-fit bg-foreground px-4 py-3 text-background">
             <h1
@@ -34,7 +34,7 @@ export default function ProjectContent() {
                   <p className="up order-2 text-base font-medium md:order-1 md:text-lg">
                     {item.title}
                   </p>
-                  <p className="UPPE order-1 text-xs text-muted-foreground md:order-2">
+                  <p className="order-1 font-mono text-xs text-muted-foreground md:order-2">
                     {item.year}
                   </p>
                 </div>

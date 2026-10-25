@@ -18,5 +18,9 @@ export const NAV_ITEMS = [
   {
     title: "PROJECT",
     href: "/project",
+  },
+  {
+    title: "BLOG",
+    href: "/blog",
   }
 ]
