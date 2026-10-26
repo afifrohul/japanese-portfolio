@@ -9,7 +9,7 @@ import Link from "next/link"
 export default function BlogContent() {
   return (
     <div className="flex flex-1">
-      <div className="flex flex-1 flex-col gap-8 px-6 pt-16 lg:px-24">
+      <div className="flex flex-1 flex-col gap-8 px-6 py-16 lg:px-24">
         <ImageWithBlurPlaceholder
           src={castle}
           classname="h-36 w-36 md:h-56 md:w-56"
@@ -35,7 +35,7 @@ export default function BlogContent() {
             <Link
               href={item.href}
               key={index}
-              className="group duration-150 hover:bg-foreground/5 z-50"
+              className="group z-50 duration-150 hover:bg-foreground/5"
             >
               <ImageWithBlurPlaceholder
                 src={item.thumbnail}
