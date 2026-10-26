@@ -362,7 +362,7 @@ export function AudioPlayer() {
           maxWidth: "calc(100vw - 2rem)",
           height: open ? CARD_HEIGHT : 0,
         }}
-        className={`absolute top-[calc(100%+8px)] left-0 overflow-hidden border border-foreground/15 bg-background text-foreground shadow-[0_10px_28px_-12px_rgba(26,26,26,0.35)] transition-[height,opacity,transform] duration-200 ease-out ${
+        className={`absolute top-[calc(100%+8px)] left-0 overflow-hidden border border-foreground/15 bg-background text-foreground shadow-[0_10px_28px_-12px_rgba(26,26,26,0.35)] transition-[height,opacity,transform] duration-200 ease-out z-70 ${
           open
             ? "translate-y-0 opacity-100"
             : "pointer-events-none -translate-y-1 opacity-0"

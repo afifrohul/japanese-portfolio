@@ -38,8 +38,8 @@ export default function Header() {
                   ? "Disable custom cursor"
                   : "Enable custom cursor"
               }
-              className={`flex hidden items-center gap-2 p-2 text-xs tracking-widest transition-colors duration-150 hover:bg-accent-foreground hover:text-accent lg:block ${
-                isCursorEnabled ? "bg-accent-foreground text-accent" : ""
+              className={`flex hidden items-center gap-2 p-2 text-xs tracking-widest transition-colors duration-150 hover:bg-accent-background hover:text-accent lg:block ${
+                isCursorEnabled ? "bg-accent-background text-accent" : ""
               }`}
             >
               <LuMousePointer2 />
@@ -51,7 +51,7 @@ export default function Header() {
               href="https://www.linkedin.com/in/afifrohul/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-2 py-1 text-xs tracking-widest transition-colors duration-150 hover:bg-accent-foreground hover:text-accent"
+              className="flex items-center gap-2 px-2 py-1 text-xs tracking-widest transition-colors duration-150 hover:bg-accent-background hover:text-accent"
             >
               <LuLinkedin />
               <span className="hidden md:block">LINKEDIN</span>
@@ -61,7 +61,7 @@ export default function Header() {
               href="https://github.com/afifrohul"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-2 py-1 text-xs tracking-widest transition-colors duration-150 hover:bg-accent-foreground hover:text-accent"
+              className="flex items-center gap-2 px-2 py-1 text-xs tracking-widest transition-colors duration-150 hover:bg-accent-background hover:text-accent"
             >
               <LuGithub />
               <span className="hidden md:block">GITHUB</span>

@@ -35,14 +35,12 @@ export default function BlogContent() {
             <Link
               href={item.href}
               key={index}
-              className="group duration-150 hover:bg-foreground/5"
+              className="group duration-150 hover:bg-foreground/5 z-50"
             >
-              <div className="group-hover:">
-                <ImageWithBlurPlaceholder
-                  src={item.thumbnail}
-                  classname="border-2 h-32"
-                />
-              </div>
+              <ImageWithBlurPlaceholder
+                src={item.thumbnail}
+                classname="border-2 h-32 z-50"
+              />
               <div className="flex flex-col gap-2 p-2">
                 <div>
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between">

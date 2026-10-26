@@ -54,7 +54,7 @@ export default function SmoothCursorDecoration() {
   return (
     <motion.div
       aria-hidden="true"
-      className="pointer-events-none fixed left-0 top-0 z-50 hidden w-fit rounded-full rounded-tl-md bg-accent px-3 py-1.5 lg:block"
+      className="pointer-events-none fixed left-0 top-0 z-60 hidden w-fit rounded-full rounded-tl-md bg-accent px-3 py-1.5 lg:block border border-foreground/15"
       style={{
         x: springX,
         y: springY,

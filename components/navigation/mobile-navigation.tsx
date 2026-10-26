@@ -14,7 +14,7 @@ export function MobileNavigation() {
   const pathname = usePathname()
 
   return (
-    <header className="sticky top-0 z-50 border-b bg-background lg:hidden">
+    <header className="sticky top-0 z-70 border-b bg-background lg:hidden">
       <div className="flex h-12 items-center justify-between px-4">
         <span className="text-sm font-medium">MENU</span>
 

@@ -4,6 +4,7 @@
 
 :root {
   --background: #f5f1e8;
+  --secondary-background: #ded8cd;
   --foreground: #202321;
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
@@ -16,9 +17,10 @@
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
   --accent: #b94232;
-  --accent-foreground: #f0dcd5;
+  --accent-background: #f0dcd5;
+  --accent-foreground: #a82f25;
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
+  --border: #ded8cd;
   --input: oklch(0.922 0 0);
   --ring: oklch(0.708 0 0);
   --chart-1: oklch(0.87 0 0);
@@ -57,6 +59,7 @@
   --color-input: var(--input);
   --color-border: var(--border);
   --color-destructive: var(--destructive);
+  --color-accent-background: var(--accent-background);
   --color-accent-foreground: var(--accent-foreground);
   --color-accent: var(--accent);
   --color-muted-foreground: var(--muted-foreground);
@@ -71,6 +74,7 @@
   --color-card: var(--card);
   --color-foreground: var(--foreground);
   --color-background: var(--background);
+  --color-secondary-background: var(--secondary-background);
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
@@ -110,7 +114,7 @@ body {
 }
 
 ::selection {
-  background: #ded8cd; /* Warna latar belakang saat teks diblok */
+  background: var(--color-secondary-background); /* Warna latar belakang saat teks diblok */
 }
 
 div.vertical-panel-rl {

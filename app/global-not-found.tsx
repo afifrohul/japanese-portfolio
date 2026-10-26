@@ -38,7 +38,7 @@ export default function GlobalNotFound() {
               </div>
               <a
                 href="/"
-                className="flex items-center gap-2 px-2 py-1 text-xs tracking-widest duration-150 hover:bg-accent-foreground hover:text-accent"
+                className="flex items-center gap-2 px-2 py-1 text-xs tracking-widest duration-150 hover:bg-accent-background hover:text-accent"
               >
                 <LuArrowLeft />
                 <span>RETURN HOME</span>

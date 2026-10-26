@@ -36,7 +36,7 @@ export default function AboutContent() {
               key={label}
               href={link}
               target="_blank"
-              className="flex items-center gap-2 px-2 py-1 text-xs tracking-widest duration-150 hover:bg-accent-foreground hover:text-accent"
+              className="flex items-center gap-2 px-2 py-1 text-xs tracking-widest duration-150 hover:bg-accent-background hover:text-accent"
             >
               <Icon />
               <p>{label}</p>
