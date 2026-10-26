@@ -31,9 +31,9 @@ export default function ExperienceContent() {
             <div key={index} className="flex flex-col gap-4">
               <div>
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between">
-                  <p className="up order-2 text-base font-medium md:order-1 md:text-lg">
+                  <h1 className="up order-2 text-base font-medium md:order-1 md:text-lg">
                     {item.company}
-                  </p>
+                  </h1>
                   <p className="font-mono order-1 text-xs text-muted-foreground md:order-2">
                     {item.start_month} {item.start_year} - {item.end_month}{" "}
                     {item.end_year}

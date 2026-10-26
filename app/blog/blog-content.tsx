@@ -46,11 +46,11 @@ export default function BlogContent() {
               <div className="flex flex-col gap-2 p-2">
                 <div>
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between">
-                    <p
+                    <h1
                       className={`up order-2 text-base font-medium duration-150 group-hover:text-accent md:order-1 md:text-lg ${noto_sans_jp.className}`}
                     >
                       {item.title}
-                    </p>
+                    </h1>
                     <p className="order-1 font-mono text-xs text-muted-foreground md:order-2">
                       {item.created_at}
                     </p>
