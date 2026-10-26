@@ -10,7 +10,10 @@ export default function BlogContent() {
   return (
     <div className="flex flex-1">
       <div className="flex flex-1 flex-col gap-8 px-6 pt-16 lg:px-24">
-        <ImageWithBlurPlaceholder src={castle} classname="h-36 w-36 md:h-56 md:w-56" />
+        <ImageWithBlurPlaceholder
+          src={castle}
+          classname="h-36 w-36 md:h-56 md:w-56"
+        />
         <div className="space-y-2">
           <div className="w-fit bg-foreground px-4 py-3 text-background">
             <h1
@@ -34,6 +37,12 @@ export default function BlogContent() {
               key={index}
               className="group duration-150 hover:bg-foreground/5"
             >
+              <div className="group-hover:">
+                <ImageWithBlurPlaceholder
+                  src={item.thumbnail}
+                  classname="border-2 h-32"
+                />
+              </div>
               <div className="flex flex-col gap-2 p-2">
                 <div>
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between">
