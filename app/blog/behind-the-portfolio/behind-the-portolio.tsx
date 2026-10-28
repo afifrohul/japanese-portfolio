@@ -319,6 +319,21 @@ export default function BehindThePortfolio() {
                     </div>
                   </div>
                 </div>
+                <div className="w-full">
+                  <div className="w-full border flex">
+                    <div className="bg-background h-4 w-8/10"/>
+                    <div className="bg-foreground h-4 w-3/20"/>
+                    <div className="bg-accent h-4 w-1/20"/>
+                  </div>
+                  <div className="w-full flex items-center justify-between mt-1 font-mono">
+                    <p className="text-xs text-muted-foreground">80% WASHI</p>
+                    <div className="flex items-center gap-2">
+                      <p className="text-xs text-muted-foreground">15% INK</p>
+                      <p className="text-xs text-muted-foreground">/</p>
+                      <p className="text-xs text-muted-foreground">5% VERMILION</p>
+                    </div>
+                  </div>
+                </div>
               </div>
               <Separator />
 
