@@ -1,9 +1,11 @@
-export const educations = [
+import type { Education } from "../types/educations";
+
+export const fallbackEducations: Education[] = [
   {
     company: "University of Jember",
     location: "Jember, Indonesia",
     department: "Department of Computer Science",
-    focus: 'MACHINE LEARNING ・ DEEP LEARNING ・ WEBSITE DEVELOPMENT',
+    focus: "MACHINE LEARNING ・ DEEP LEARNING ・ WEBSITE DEVELOPMENT",
     start_month: "Aug",
     start_year: 2021,
     end_month: "Jul",
