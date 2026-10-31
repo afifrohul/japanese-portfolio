@@ -1,11 +1,16 @@
+"use client"
+
 import { noto_sans_jp } from "@/lib/font"
-import { projects } from "./data"
 import SideDecoration from "@/components/side-decoration"
 import ship from "@/public/assets/ship-sun.png"
 import ImageWithBlurPlaceholder from "@/components/image-with-blur-placeholder"
 import { Separator } from "@/components/ui/separator"
+import { useProjetcs } from "../../features/project/hooks/use-projects"
+import { ThinkingOrb } from "thinking-orbs"
 
 export default function ProjectContent() {
+  const { data: projects, isFetching } = useProjetcs()
+
   return (
     <div className="flex flex-1">
       <div className="flex flex-1 flex-col gap-8 px-6 py-16 lg:px-24">
@@ -25,12 +30,15 @@ export default function ProjectContent() {
             <p className="tracking-widest text-accent">PROJECT</p>
             <div className="h-px w-6 bg-foreground" />
             <p className="tracking-widest text-accent">
-              {projects.length} WORKS
+              {projects?.length} WORKS
             </p>
+            {isFetching && (
+              <ThinkingOrb state="connecting" size={20} color="#b94232" />
+            )}
           </div>
         </div>
         <div className="flex flex-col gap-8">
-          {projects.map((item, index) => (
+          {projects?.map((item, index) => (
             <div key={index} className="flex flex-col gap-4">
               <div>
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between">

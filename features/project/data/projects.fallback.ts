@@ -1,4 +1,4 @@
-export const projects = [
+export const fallbackProjects = [
   {
     title: "Forum App",
     desc: "A full-stack discussion platform built with React and Node.js.",
@@ -18,7 +18,6 @@ export const projects = [
     tech: "Tailwind CSS ・ React ・ MySQL ・ Laravel",
   },
   {
-    created_at: "2025-12-06T11:53:01.61245+00:00",
     title: "IF MERCH Recreate",
     desc: "A rebuilt e-commerce platform for merchandise sales, featuring a Midtrans payment gateway.",
     details:
@@ -28,7 +27,6 @@ export const projects = [
     tech: "Tailwind CSS ・ Next ・ MySQL ・ Laravel",
   },
   {
-    created_at: "2025-12-06T11:51:47.82567+00:00",
     title: "Automate Crop Timeline",
     desc: "An agricultural management system that automatically generates planting schedules.",
     details:
