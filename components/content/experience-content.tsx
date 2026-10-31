@@ -1,11 +1,16 @@
+'use client'
+
 import { noto_sans_jp } from "@/lib/font"
-import { experiences } from "./data"
 import { Separator } from "@/components/ui/separator"
 import SideDecoration from "@/components/side-decoration"
 import ImageWithBlurPlaceholder from "@/components/image-with-blur-placeholder"
 import mountain from "@/public/assets/mountain-sun.png"
+import { useExperinces } from "../../features/experience/hooks/use-experiences"
+import { ThinkingOrb } from "thinking-orbs"
 
 export default function ExperienceContent() {
+  const { data: experiences, isFetching } = useExperinces()
+
   return (
     <div className="flex flex-1">
       <div className="flex flex-1 flex-col gap-8 px-6 py-16 lg:px-24">
@@ -25,12 +30,15 @@ export default function ExperienceContent() {
             <p className="tracking-widest text-accent">EXPERIENCE</p>
             <div className="h-px w-6 bg-foreground" />
             <p className="tracking-widest text-accent">
-              {experiences.length} ROLES
+              {experiences?.length} ROLES
             </p>
+            {isFetching && (
+              <ThinkingOrb state="connecting" size={20} color="#b94232" />
+            )}
           </div>
         </div>
         <div className="flex flex-col gap-8">
-          {experiences.map((item, index) => (
+          {experiences?.map((item, index) => (
             <div key={index} className="flex flex-col gap-4">
               <div>
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between">
