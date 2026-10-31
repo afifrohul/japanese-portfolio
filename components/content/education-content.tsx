@@ -1,11 +1,16 @@
+"use client"
+
 import { noto_sans_jp } from "@/lib/font"
-import { educations } from "./data"
 import { Separator } from "@/components/ui/separator"
 import SideDecoration from "@/components/side-decoration"
 import book from "@/public/assets/book-sun.png"
 import ImageWithBlurPlaceholder from "@/components/image-with-blur-placeholder"
+import { useEducations } from "../../features/education/hooks/use-educations"
+import { ThinkingOrb } from "thinking-orbs"
 
 export default function EducationContent() {
+  const { data: educations, isFetching } = useEducations()
+
   return (
     <div className="flex flex-1">
       <div className="flex flex-1 flex-col gap-8 px-6 py-16 lg:px-24">
@@ -25,12 +30,15 @@ export default function EducationContent() {
             <p className="tracking-widest text-accent">EDUCATION</p>
             <div className="h-px w-6 bg-foreground" />
             <p className="tracking-widest text-accent">
-              {educations.length} JOURNEYS
+              {educations?.length} JOURNEYS
             </p>
+            {isFetching && (
+              <ThinkingOrb state="connecting" size={20} color="#b94232" />
+            )}
           </div>
         </div>
         <div className="flex flex-col gap-8">
-          {educations.map((item, index) => (
+          {educations?.map((item, index) => (
             <div key={index} className="flex flex-col gap-4">
               <div>
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between">
