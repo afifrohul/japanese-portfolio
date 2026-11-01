@@ -5,8 +5,9 @@ import {
   LuLinkedin,
   LuMail,
 } from "react-icons/lu"
+import type { Social } from "../types/social"
 
-export const socials = [
+export const socials: Social[] = [
   {
     icon: LuInstagram,
     link: "https://instagram.com/afif.rohul",
