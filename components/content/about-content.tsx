@@ -1,8 +1,9 @@
 import { noto_sans_jp } from "@/lib/font"
-import { about, socials } from "./data"
 import SideDecoration from "@/components/side-decoration"
 import tori from "@/public/assets/tori-sun.png"
 import ImageWithBlurPlaceholder from "@/components/image-with-blur-placeholder"
+import { socials } from "../../features/about/data/socials.fallback"
+import { about } from "../../features/about/data/about.fallback"
 
 export default function AboutContent() {
   return (
