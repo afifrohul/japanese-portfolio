@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import BehindThePortfolio from "./behind-the-portolio"
+import BehindThePortfolio from "../../../components/content/blogs/behind-the-portolio"
 
 export const metadata: Metadata = {
   title: "墨朱 — Behind the Portfolio | Afif Rohul",

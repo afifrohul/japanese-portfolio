@@ -2,9 +2,9 @@ import ImageWithBlurPlaceholder from "@/components/image-with-blur-placeholder"
 import SideDecoration from "@/components/side-decoration"
 import { noto_sans_jp } from "@/lib/font"
 import castle from "@/public/assets/castle-sun.png"
-import { blogs } from "./data"
 import { Separator } from "@/components/ui/separator"
 import Link from "next/link"
+import { blogs } from "../../features/blog/data/blogs.fallback"
 
 export default function BlogContent() {
   return (
