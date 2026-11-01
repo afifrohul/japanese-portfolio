@@ -1,16 +1,21 @@
-import { noto_sans_jp } from "@/lib/font"
-import { experiences } from "./data"
-import { Separator } from "@/components/ui/separator"
-import SideDecoration from "@/components/side-decoration"
-import ImageWithBlurPlaceholder from "@/components/image-with-blur-placeholder"
-import mountain from "@/public/assets/mountain-sun.png"
+"use client"
 
-export default function ExperienceContent() {
+import { noto_sans_jp } from "@/lib/font"
+import SideDecoration from "@/components/side-decoration"
+import ship from "@/public/assets/ship-sun.png"
+import ImageWithBlurPlaceholder from "@/components/image-with-blur-placeholder"
+import { Separator } from "@/components/ui/separator"
+import { useProjetcs } from "../../features/project/hooks/use-projects"
+import { ThinkingOrb } from "thinking-orbs"
+
+export default function ProjectContent() {
+  const { data: projects, isFetching } = useProjetcs()
+
   return (
     <div className="flex flex-1">
       <div className="flex flex-1 flex-col gap-8 px-6 py-16 lg:px-24">
         <ImageWithBlurPlaceholder
-          src={mountain}
+          src={ship}
           classname="h-36 w-36 md:h-56 md:w-56"
         />
         <div className="space-y-2">
@@ -18,41 +23,44 @@ export default function ExperienceContent() {
             <h1
               className={`${noto_sans_jp.className} text-4xl font-black tracking-tight`}
             >
-              経験
+              事業
             </h1>
           </div>
           <div className="flex w-full items-center gap-3">
-            <p className="tracking-widest text-accent">EXPERIENCE</p>
+            <p className="tracking-widest text-accent">PROJECT</p>
             <div className="h-px w-6 bg-foreground" />
             <p className="tracking-widest text-accent">
-              {experiences.length} ROLES
+              {projects?.length} WORKS
             </p>
+            {isFetching && (
+              <ThinkingOrb state="connecting" size={20} color="#b94232" />
+            )}
           </div>
         </div>
         <div className="flex flex-col gap-8">
-          {experiences.map((item, index) => (
+          {projects?.map((item, index) => (
             <div key={index} className="flex flex-col gap-4">
               <div>
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between">
                   <h1 className="up order-2 text-base font-medium md:order-1 md:text-lg">
-                    {item.company}
+                    {item.title}
                   </h1>
                   <p className="order-1 font-mono text-xs text-muted-foreground md:order-2">
-                    {item.start_month} {item.start_year} - {item.end_month}{" "}
-                    {item.end_year}
+                    {item.year}
                   </p>
                 </div>
-                <p className="font-mono text-xs text-muted-foreground uppercase">
-                  {item.role} ・ {item.location}
+                <p className="font-mono text-xs text-muted-foreground">
+                  {item.desc}
                 </p>
               </div>
-              <p className="text-sm">{item.desc}</p>
+              <p className="text-sm">{item.details}</p>
+              <p className="text-xs text-muted-foreground">{item.tech}</p>
               <Separator />
             </div>
           ))}
         </div>
       </div>
-      <SideDecoration page="経験" content="体験の創出" />
+      <SideDecoration page="事業" content="デザイン・開発" />
     </div>
   )
 }
