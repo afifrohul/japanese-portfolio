@@ -2,10 +2,11 @@
 
 import { useState } from "react"
 import { Separator } from "./ui/separator"
-import { LuGithub, LuLinkedin, LuMousePointer2 } from "react-icons/lu"
+import { LuGithub, LuLinkedin } from "react-icons/lu"
 import SmoothCursor from "./smooth-cursor-decoration"
 import { AudioPlayer } from "./audio/audio-player"
 import StampBrand from "./brand/stamp"
+import { MousePointer2, MousePointer2Off } from "lucide-react"
 
 export default function Header() {
   const [isCursorEnabled, setIsCursorEnabled] = useState(true)
@@ -17,7 +18,7 @@ export default function Header() {
       <div className="">
         <div className="flex items-center justify-between px-4 py-3">
           <div className="flex items-center gap-2">
-            <StampBrand content="静" classname="text-base"/>
+            <StampBrand content="静" classname="text-base" />
             <p className="font-mono text-xs font-semibold tracking-widest md:text-sm">
               AFIF
             </p>
@@ -42,7 +43,11 @@ export default function Header() {
                 isCursorEnabled ? "bg-accent-background text-accent" : ""
               }`}
             >
-              <LuMousePointer2 />
+              {isCursorEnabled ? (
+                <MousePointer2 className="w-4 h-4" />
+              ) : (
+                <MousePointer2Off className="w-4 h-4" />
+              )}
             </button>
 
             <Separator orientation="vertical" />
