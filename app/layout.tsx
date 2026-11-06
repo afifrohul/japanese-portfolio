@@ -11,6 +11,7 @@ import PaperOverlay from "@/components/paper-overlay"
 import SmoothScroll from "@/components/smooth-scroll"
 import IntroLoader from "@/components/intro-loader"
 import { Providers } from "./providers"
+import NextTopLoader from "nextjs-toploader"
 
 const geistHeading = Geist({ subsets: ["latin"], variable: "--font-heading" })
 
@@ -46,6 +47,7 @@ export default function RootLayout({
       </head>
       <body>
         <Providers>
+          <NextTopLoader showSpinner={false} color="#202321"/>
           <Analytics />
           <IntroLoader />
           <SmoothScroll>

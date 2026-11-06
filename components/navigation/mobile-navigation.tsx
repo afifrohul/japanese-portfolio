@@ -20,13 +20,9 @@ export function MobileNavigation() {
 
         <Sheet>
           <SheetTrigger>
-            <Button
-              variant="ghost"
-              size="icon"
-              aria-label="Open navigation menu"
-            >
-              <Menu />
-            </Button>
+            <div aria-label="Open navigation menu">
+              <Menu className="h-4 w-4" />
+            </div>
           </SheetTrigger>
 
           <SheetContent side="left" className="bg-background">
