@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono, Inter } from "next/font/google"
+
 
 import "./globals.css"
 import { cn } from "@/lib/utils"
@@ -12,15 +12,7 @@ import SmoothScroll from "@/components/smooth-scroll"
 import IntroLoader from "@/components/intro-loader"
 import { Providers } from "./providers"
 import NextTopLoader from "nextjs-toploader"
-
-const geistHeading = Geist({ subsets: ["latin"], variable: "--font-heading" })
-
-const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
-
-const fontMono = Geist_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono",
-})
+import { fontMono, geistHeading, inter } from "../lib/font"
 
 export default function RootLayout({
   children,
