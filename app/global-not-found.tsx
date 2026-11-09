@@ -1,10 +1,8 @@
 /* eslint-disable @next/next/no-html-link-for-pages */
-// Import global styles and fonts
 import "./globals.css"
 import { Inter } from "next/font/google"
 import type { Metadata } from "next"
 import { noto_sans_jp } from "@/lib/font"
-// import Link from "next/link"
 import { LuArrowLeft } from "react-icons/lu"
 
 const inter = Inter({ subsets: ["latin"] })

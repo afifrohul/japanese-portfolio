@@ -1,5 +1,3 @@
-
-
 import "./globals.css"
 import { cn } from "@/lib/utils"
 import { Separator } from "@/components/ui/separator"
@@ -12,7 +10,7 @@ import SmoothScroll from "@/components/smooth-scroll"
 import IntroLoader from "@/components/intro-loader"
 import { Providers } from "./providers"
 import NextTopLoader from "nextjs-toploader"
-import { fontMono, geistHeading, inter } from "../lib/font"
+import { fontMono, geistHeading, inter } from "@/lib/font"
 
 export default function RootLayout({
   children,
@@ -39,7 +37,7 @@ export default function RootLayout({
       </head>
       <body>
         <Providers>
-          <NextTopLoader showSpinner={false} color="#202321"/>
+          <NextTopLoader showSpinner={false} color="#202321" />
           <Analytics />
           <IntroLoader />
           <SmoothScroll>
