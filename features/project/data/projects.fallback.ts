@@ -1,5 +1,14 @@
 export const fallbackProjects = [
   {
+    title: "Personal Life Tracker",
+    desc: "A personal space to organize, track, and reflect on everyday life.",
+    details:
+      "An all-in-one self-management application designed to help track mood, habits, finances, journaling, and tasks in a single unified system. This project was built to solve a personal problem: managing different aspects of life across multiple disconnected tools. By centralizing everything in one place, the app enables better self-reflection, consistency, and long-term personal growth.",
+    link: "",
+    year: 2026,
+    tech: "Tailwind CSS ・ React ・ MySQL/PostgreSQL ・ Laravel",
+  },
+  {
     title: "Forum App",
     desc: "A full-stack discussion platform built with React and Node.js.",
     details:
@@ -7,15 +16,6 @@ export const fallbackProjects = [
     link: "https://forum-app-opal.vercel.app/",
     year: 2026,
     tech: "Tailwind CSS ・ React ・ PostgreSQL ・ Node.JS ・ Express.JS",
-  },
-  {
-    title: "Habit Tracker",
-    desc: "A personal habit-tracking application with gamification features.",
-    details:
-      "This habit tracker is a personal ongoing project designed to help track and build daily habits. It features a mini gamification system where completing habits rewards experience points (EXP), allowing users to level up over time. The project is still under active development and will continue to be expanded with new features.",
-    link: "",
-    year: 2025,
-    tech: "Tailwind CSS ・ React ・ MySQL ・ Laravel",
   },
   {
     title: "IF MERCH Recreate",

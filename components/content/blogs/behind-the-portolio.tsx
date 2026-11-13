@@ -4,11 +4,20 @@ import ImageWithBlurPlaceholder from "@/components/image-with-blur-placeholder"
 import { Separator } from "@/components/ui/separator"
 import btp from "@/public/blog/btp.png"
 import StampBrand from "@/components/brand/stamp"
+import Link from "next/link"
+import { LuChevronLeft } from "react-icons/lu"
 
 export default function BehindThePortfolio() {
   return (
     <div className="flex flex-1">
       <div className="flex flex-1 flex-col gap-8 px-6 py-16 lg:px-24">
+        <Link
+          href="/blog"
+          className="flex w-fit items-center gap-2 border px-2 py-1 text-xs tracking-widest text-muted-foreground transition-colors duration-150 hover:bg-accent-background hover:text-accent"
+        >
+          <LuChevronLeft />
+          <span className="hidden md:block">BACK</span>
+        </Link>
         <ImageWithBlurPlaceholder
           src={btp}
           classname="h-24 lg:h-48 border-2 z-50"
@@ -413,7 +422,7 @@ export default function BehindThePortfolio() {
             <div className="space-y-4">
               <div className="space-y-1">
                 <h1 className="font-semibold">Framework & UI</h1>
-                <div className="text-muted-foreground">
+                <div className="text-muted-foreground space-y-0.5">
                   <p className="text-sm">
                     <span className="font-mono font-medium text-foreground">
                       Next.js
@@ -439,7 +448,7 @@ export default function BehindThePortfolio() {
               </div>
               <div className="space-y-1">
                 <h1 className="font-semibold">Styling & Components</h1>
-                <div className="text-muted-foreground">
+                <div className="text-muted-foreground space-y-0.5">
                   <p className="text-sm">
                     <span className="font-mono font-medium text-foreground">
                       Tailwind CSS
@@ -459,7 +468,7 @@ export default function BehindThePortfolio() {
               </div>
               <div className="space-y-1">
                 <h1 className="font-semibold">Motion & Interaction</h1>
-                <div className="text-muted-foreground">
+                <div className="text-muted-foreground space-y-0.5">
                   <p className="text-sm">
                     <span className="font-mono font-medium text-foreground">
                       Framer Motion
@@ -481,7 +490,7 @@ export default function BehindThePortfolio() {
           </div>
         </div>
       </div>
-      <SideDecoration page="事業" content="デザイン・開発" />
+      <SideDecoration page="ブログ" content="ポートフォリオ" />
     </div>
   )
 }
