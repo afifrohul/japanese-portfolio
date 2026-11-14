@@ -150,7 +150,7 @@ export default function PersonalLifeTracker() {
                 <p className="font-semibold text-accent">
                   Personal Life Tracker
                 </p>
-                <p className="text-xs text-muted-foreground">
+                <p className="text-xs text-muted-foreground text-center">
                   One place to manage different aspects of everyday life
                 </p>
               </div>
