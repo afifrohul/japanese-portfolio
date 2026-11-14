@@ -6,7 +6,7 @@ export const blogs = [
     title: "From a Personal Need to a Year-Long Development Journey",
     desc: "A project that started as a personal tool gradually became a journey of learning, experimenting, and growing as a developer.",
     tags: ["Design", "Development", "Personal"],
-    created_at: "10 Nov 2026",
+    created_at: "14 Nov 2026",
     href: "/blog/from-a-personal-need-to-a-year-long-development-journey",
     thumbnail: plt,
   },

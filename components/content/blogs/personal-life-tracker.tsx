@@ -38,7 +38,7 @@ export default function PersonalLifeTracker() {
             From a Personal Need to a Year-Long Development Journey
           </h1>
           <p className="font-mono text-xs text-muted-foreground">
-            10 Nov 2026 | DESIGN・DEVELOPMENT・PERSONAL
+            14 Nov 2026 | DESIGN・DEVELOPMENT・PERSONAL
           </p>
         </div>
         <div className="z-50 space-y-8">
