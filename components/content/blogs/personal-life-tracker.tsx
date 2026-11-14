@@ -17,6 +17,13 @@ import {
 } from "lucide-react"
 import summary from "@/public/blog/personal-life-tracker/summary.png"
 import tracker from "@/public/blog/personal-life-tracker/tracker.png"
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
 
 export default function PersonalLifeTracker() {
   return (
@@ -169,8 +176,52 @@ export default function PersonalLifeTracker() {
             <p className="text-sm">
               {`This eventually became another important part of Personal Life Tracker. The idea was to make the application more than just a place to record things. I wanted it to help me monitor my progress, recognize patterns, and reflect on how I was spending my time and managing different aspects of my life.`}
             </p>
-            <ImageWithBlurPlaceholder src={summary} classname="border-2 z-50" />
-            <ImageWithBlurPlaceholder src={tracker} classname="border-2 z-50" />
+            <Dialog>
+              <DialogTrigger
+                render={
+                  <div className="hover:cursor-pointer lg:hover:scale-[1.005] duration-200">
+                    <ImageWithBlurPlaceholder
+                      src={summary}
+                      classname="border-2 z-50"
+                    />
+                  </div>
+                }
+              />
+              <DialogContent className="md:min-w-2xl lg:min-w-7xl">
+                <DialogHeader>
+                  <DialogTitle>SUMMARY.PNG</DialogTitle>
+                  <div className="mt-4">
+                    <ImageWithBlurPlaceholder
+                      src={summary}
+                      classname="border-2 z-50"
+                    />
+                  </div>
+                </DialogHeader>
+              </DialogContent>
+            </Dialog>
+            <Dialog>
+              <DialogTrigger
+                render={
+                  <div className="hover:cursor-pointer lg:hover:scale-[1.005] duration-200">
+                    <ImageWithBlurPlaceholder
+                      src={tracker}
+                      classname="border-2 z-50"
+                    />
+                  </div>
+                }
+              />
+              <DialogContent className="md:min-w-2xl lg:min-w-7xl">
+                <DialogHeader>
+                  <DialogTitle>TRACKER.PNG</DialogTitle>
+                  <div className="mt-4">
+                    <ImageWithBlurPlaceholder
+                      src={tracker}
+                      classname="border-2 z-50"
+                    />
+                  </div>
+                </DialogHeader>
+              </DialogContent>
+            </Dialog>
             <Separator />
           </div>
 
@@ -183,54 +234,65 @@ export default function PersonalLifeTracker() {
             <div className="space-y-4">
               <div className="space-y-1">
                 <h1 className="font-semibold">Framework & Library</h1>
-                <div className="text-muted-foreground space-y-0.5">
+                <div className="space-y-0.5 text-muted-foreground">
                   <p className="text-sm">
                     <span className="font-mono font-medium text-foreground">
                       Laravel
                     </span>{" "}
-                    — The full-stack framework responsible for application logic, routing, data processing, and API handling.
+                    — The full-stack framework responsible for application
+                    logic, routing, data processing, and API handling.
                   </p>
                   <p className="text-sm">
                     <span className="font-mono font-medium text-foreground">
                       Inertia
                     </span>{" "}
-                    — Bridges Laravel and React, allowing to build a modern single-page application without maintaining a separate API layer.
+                    — Bridges Laravel and React, allowing to build a modern
+                    single-page application without maintaining a separate API
+                    layer.
                   </p>
                   <p className="text-sm">
                     <span className="font-mono font-medium text-foreground">
                       Vite
                     </span>{" "}
-                    — Handles frontend asset bundling and provides a fast development environment with hot module replacement.
+                    — Handles frontend asset bundling and provides a fast
+                    development environment with hot module replacement.
                   </p>
                   <p className="text-sm">
                     <span className="font-mono font-medium text-foreground">
                       React
                     </span>{" "}
-                    — The frontend library used to build interactive and reusable user interface components.
+                    — The frontend library used to build interactive and
+                    reusable user interface components.
                   </p>
                   <p className="text-sm">
                     <span className="font-mono font-medium text-foreground">
                       TypeScript
                     </span>{" "}
-                    — Adds static typing to JavaScript, helping make the codebase more predictable, maintainable, and easier to develop.
+                    — Adds static typing to JavaScript, helping make the
+                    codebase more predictable, maintainable, and easier to
+                    develop.
                   </p>
                   <p className="text-sm">
                     <span className="font-mono font-medium text-foreground">
                       Tailwind CSS
                     </span>{" "}
-                    — A utility-first CSS framework used to style the interface efficiently and maintain consistent design patterns.
+                    — A utility-first CSS framework used to style the interface
+                    efficiently and maintain consistent design patterns.
                   </p>
                   <p className="text-sm">
                     <span className="font-mono font-medium text-foreground">
                       shadcn/ui
                     </span>{" "}
-                    — A collection of reusable and customizable UI components that helps speed up interface development while keeping the design flexible.
+                    — A collection of reusable and customizable UI components
+                    that helps speed up interface development while keeping the
+                    design flexible.
                   </p>
                   <p className="text-sm">
                     <span className="font-mono font-medium text-foreground">
                       MySQL/PostgreSQL
                     </span>{" "}
-                    — Relational databases used to store and manage application data, depending on the development environment.
+                    — Relational databases used to store and manage application
+                    data, depending on the development environment.
                   </p>
                 </div>
               </div>
