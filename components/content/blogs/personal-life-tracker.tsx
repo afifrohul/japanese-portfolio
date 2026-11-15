@@ -150,7 +150,7 @@ export default function PersonalLifeTracker() {
                 <p className="font-semibold text-accent">
                   Personal Life Tracker
                 </p>
-                <p className="text-xs text-muted-foreground text-center">
+                <p className="text-center text-xs text-muted-foreground">
                   One place to manage different aspects of everyday life
                 </p>
               </div>
@@ -178,8 +178,9 @@ export default function PersonalLifeTracker() {
             </p>
             <Dialog>
               <DialogTrigger
+                nativeButton={false}
                 render={
-                  <div className="hover:cursor-pointer lg:hover:scale-[1.005] duration-200">
+                  <div className="duration-200 hover:cursor-pointer lg:hover:scale-[1.005]">
                     <ImageWithBlurPlaceholder
                       src={summary}
                       classname="border-2 z-50"
@@ -201,8 +202,9 @@ export default function PersonalLifeTracker() {
             </Dialog>
             <Dialog>
               <DialogTrigger
+                nativeButton={false}
                 render={
-                  <div className="hover:cursor-pointer lg:hover:scale-[1.005] duration-200">
+                  <div className="duration-200 hover:cursor-pointer lg:hover:scale-[1.005]">
                     <ImageWithBlurPlaceholder
                       src={tracker}
                       classname="border-2 z-50"
