@@ -7,6 +7,7 @@ import ImageWithBlurPlaceholder from "@/components/image-with-blur-placeholder"
 import { Separator } from "@/components/ui/separator"
 import { useProjetcs } from "../../features/project/hooks/use-projects"
 import { ThinkingOrb } from "thinking-orbs"
+import { ExternalLink, LockKeyhole, LockOpen } from "lucide-react"
 
 export default function ProjectContent() {
   const { data: projects, isFetching } = useProjetcs()
@@ -55,6 +56,32 @@ export default function ProjectContent() {
               </div>
               <p className="text-sm">{item.details}</p>
               <p className="text-xs text-muted-foreground">{item.tech}</p>
+              {item.link != null ? (
+                <div className="flex items-center">
+                  <div className="flex w-fit items-center gap-1 text-xs text-muted-foreground">
+                    <LockOpen className="h-2.5 w-2.5" />
+                    <p className="font-mono">Public Repository</p>
+                  </div>
+                  <div className="flex items-center">
+                    <p className="text-muted-foreground">・</p>
+                    <a
+                      href={item.link}
+                      target="_blank"
+                      className="flex items-center gap-1 text-accent hover:underline"
+                    >
+                      <p className="font-mono text-xs font-medium">GitHub</p>
+                      <ExternalLink className="h-2.5 w-2.5" />
+                    </a>
+                  </div>
+                </div>
+              ) : (
+                <div className="flex items-center">
+                  <div className="flex w-fit items-center gap-1 text-xs text-muted-foreground hover:cursor-not-allowed">
+                    <LockKeyhole className="h-2.5 w-2.5" />
+                    <p className="font-mono">Private Repository</p>
+                  </div>
+                </div>
+              )}
               <Separator />
             </div>
           ))}
