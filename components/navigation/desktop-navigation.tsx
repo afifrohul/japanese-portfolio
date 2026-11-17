@@ -26,7 +26,7 @@ export function DesktopNavigation() {
               (item.href !== "/" && pathname.startsWith(`${item.href}/`))
 
             return (
-              <div key={item.href}>
+              <div key={item.href} className="w-fit">
                 <Link href={item.href}>
                   <div
                     className={clsx(

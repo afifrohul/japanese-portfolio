@@ -4,7 +4,6 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Menu } from "lucide-react"
 import clsx from "clsx"
-import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { NAV_ITEMS } from "./navigation-menu"
 import BlockBrand from "../brand/block"
@@ -46,6 +45,7 @@ export function MobileNavigation() {
                         key={item.href}
                         href={item.href}
                         aria-current={isActive ? "page" : undefined}
+                        className="w-fit"
                       >
                         <div
                           className={clsx(
