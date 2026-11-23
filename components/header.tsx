@@ -1,8 +1,7 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Separator } from "./ui/separator"
-import { LuGithub, LuLinkedin } from "react-icons/lu"
 import SmoothCursor from "./smooth-cursor-decoration"
 import { AudioPlayer } from "./audio/audio-player"
 import StampBrand from "./brand/stamp"
@@ -10,6 +9,24 @@ import { MousePointer2, MousePointer2Off } from "lucide-react"
 
 export default function Header() {
   const [isCursorEnabled, setIsCursorEnabled] = useState(true)
+  const [time, setTime] = useState(new Date())
+
+  useEffect(() => {
+    // Update the time every second
+    const intervalId = setInterval(() => {
+      setTime(new Date())
+    }, 1000)
+
+    // Cleanup interval on component unmount
+    return () => clearInterval(intervalId)
+  }, [])
+
+  const formatTime = (date: Date) => {
+    const hours = date.getHours().toString().padStart(2, "0")
+    const minutes = date.getMinutes().toString().padStart(2, "0")
+    const seconds = date.getSeconds().toString().padStart(2, "0")
+    return `${hours}.${minutes}.${seconds}`
+  }
 
   return (
     <>
@@ -44,33 +61,17 @@ export default function Header() {
               }`}
             >
               {isCursorEnabled ? (
-                <MousePointer2 className="w-4 h-4" />
+                <MousePointer2 className="h-4 w-4" />
               ) : (
-                <MousePointer2Off className="w-4 h-4" />
+                <MousePointer2Off className="h-4 w-4" />
               )}
             </button>
-
-            <Separator orientation="vertical" />
-
-            <a
-              href="https://www.linkedin.com/in/afifrohul/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 px-2 py-1 text-xs tracking-widest transition-colors duration-150 hover:bg-accent-background hover:text-accent"
-            >
-              <LuLinkedin />
-              <span className="hidden md:block">LINKEDIN</span>
-            </a>
-
-            <a
-              href="https://github.com/afifrohul"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 px-2 py-1 text-xs tracking-widest transition-colors duration-150 hover:bg-accent-background hover:text-accent"
-            >
-              <LuGithub />
-              <span className="hidden md:block">GITHUB</span>
-            </a>
+            <Separator className="hidden lg:block" orientation="vertical" />
+            <div className="border px-1 py-2">
+              <p className="font-mono text-xs text-muted-foreground">
+                {formatTime(time)} (UTC +07.00)
+              </p>
+            </div>
           </div>
         </div>
 
