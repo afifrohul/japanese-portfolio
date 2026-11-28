@@ -5,7 +5,7 @@ import { noto_sans_jp } from "@/lib/font"
 
 export default function Page() {
   return (
-    <div className="flex flex-1">
+    <div className="flex flex-1 pb-4">
       <div className="flex flex-1 flex-col items-center justify-between">
         <div className="flex flex-1 items-center justify-between">
           <div className="flex flex-col items-center justify-center">

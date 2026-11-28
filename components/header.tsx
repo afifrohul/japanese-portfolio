@@ -67,7 +67,7 @@ export default function Header() {
               )}
             </button>
             <Separator className="hidden lg:block" orientation="vertical" />
-            <div className="border px-1 py-2">
+            <div className="border p-2">
               <p className="font-mono text-xs text-muted-foreground">
                 {formatTime(time)} (UTC +07.00)
               </p>

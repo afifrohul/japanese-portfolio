@@ -11,6 +11,7 @@ import IntroLoader from "@/components/intro-loader"
 import { Providers } from "./providers"
 import NextTopLoader from "nextjs-toploader"
 import { fontMono, geistHeading, inter } from "@/lib/font"
+import Footer from "../components/footer"
 
 export default function RootLayout({
   children,
@@ -47,10 +48,11 @@ export default function RootLayout({
               <main className="lg:flex lg:justify-center">
                 <MobileNavigation />
 
-                <div className="flex min-h-screen w-full max-w-6xl flex-col pb-4">
+                <div className="flex min-h-screen w-full max-w-6xl flex-col">
                   <Header />
                   <Separator />
                   {children}
+                  <Footer />
                 </div>
               </main>
             </div>
